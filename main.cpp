@@ -14,13 +14,26 @@ int sumaRecursiva(int *puntero, int len){
     if(len==1){
         return *puntero;
     }else{
-        *puntero=*puntero+sumaRecursiva(puntero+1, len-1);
-        return *puntero;
+        return *puntero=*puntero+sumaRecursiva(puntero+1, len-1);
+    }
+}
+
+void invertirLista(int *puntero, int len){
+    int aux;
+    for(int i=0; i<(len-1)/2; i++){
+        aux=*puntero;
+        *puntero=*(puntero+(len-1));
+        *(puntero+(len-1))=aux;
+        *puntero++;
+        len--;
     }
 }
 int main()
 {
     int lista[5]={1,2,3,4,6};
-    cout<<sumaRecursiva(lista, 5);
+    invertirLista(lista, 5);
+    for(int i=0; i<5; i++){
+        cout<<lista[i];
+    }
     return 0;
 }
