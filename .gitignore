@@ -4,5 +4,6 @@
 *.exe
 *.o
 *.md
+*.ini
 bin/
 obj/
