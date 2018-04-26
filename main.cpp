@@ -19,20 +19,21 @@ int sumaRecursiva(int *puntero, int len){
 }
 
 void invertirLista(int *puntero, int len){
+    int *punt2=puntero+len-1;
     int aux;
-    for(int i=0; i<(len-1)/2; i++){
+    for(; puntero<=punt2; *puntero++, *punt2--){
         aux=*puntero;
-        *puntero=*(puntero+(len-1));
-        *(puntero+(len-1))=aux;
-        *puntero++;
-        len--;
+        *puntero=*punt2;
+        *punt2=aux;
     }
 }
+
+
 int main()
 {
-    int lista[5]={1,2,3,4,6};
-    invertirLista(lista, 5);
-    for(int i=0; i<5; i++){
+    int lista[6]={1,2,3,4,5,6};
+    invertirLista(lista, 6);
+    for(int i=0; i<6; i++){
         cout<<lista[i];
     }
     return 0;
