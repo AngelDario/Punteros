@@ -28,13 +28,23 @@ void invertirLista(int *puntero, int len){
     }
 }
 
+int tamanioCadena(char *cadena){
+  int aux=0;
+  while(*cadena!='\0'){
+    aux++;
+    *cadena++;
+  }
+  return aux;
+}
+
 
 int main()
 {
     int lista[6]={1,2,3,4,5,6};
+    char lista2[]="hola";
     invertirLista(lista, 6);
-    for(int i=0; i<6; i++){
-        cout<<lista[i];
-    }
+
+    cout<<tamanioCadena(lista2);
+
     return 0;
 }
